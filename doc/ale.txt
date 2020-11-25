@@ -2213,6 +2213,8 @@ g:ale_virtualtext_cursor                             *g:ale_virtualtext_cursor*
 
   Messages can be prefixed prefixed with a string. See |g:ale_virtualtext_prefix|.
 
+  Messages can be prefixed prefixed with a string. See |g:ale_virtualtext_suffix|.
+
   ALE will use the following highlight groups for problems:
 
   |ALEVirtualTextError|        - Items with `'type': 'E'`
@@ -2241,6 +2243,15 @@ g:ale_virtualtext_prefix                             *g:ale_virtualtext_prefix*
   Default: `'> '`
 
   Prefix to be used with |g:ale_virtualtext_cursor|.
+
+
+g:ale_virtualtext_suffix                             *g:ale_virtualtext_suffix*
+
+  Type: |String|
+  Default: `''`
+
+  Suffix to be used with |g:ale_virtualtext_cursor|.
+
 
 g:ale_virtualenv_dir_names                         *g:ale_virtualenv_dir_names*
                                                    *b:ale_virtualenv_dir_names*
