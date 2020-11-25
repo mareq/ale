@@ -50,8 +50,9 @@ function! ale#virtualtext#ShowMessage(message, hl_group) abort
     let l:line = line('.')
     let l:buffer = bufnr('')
     let l:prefix = get(g:, 'ale_virtualtext_prefix', '> ')
+    let l:suffix = get(g:, 'ale_virtualtext_suffix', '')
 
-    call nvim_buf_set_virtual_text(l:buffer, s:ns_id, l:line-1, [[l:prefix.a:message, a:hl_group]], {})
+    call nvim_buf_set_virtual_text(l:buffer, s:ns_id, l:line-1, [[l:prefix.a:message.l:suffix, a:hl_group]], {})
 endfunction
 
 function! s:StopCursorTimer() abort
