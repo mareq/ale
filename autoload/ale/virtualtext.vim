@@ -51,7 +51,8 @@ function! ale#virtualtext#ShowMessage(message, hl_group, buf, line) abort
     endif
 
     let l:prefix = get(g:, 'ale_virtualtext_prefix', '> ')
-    let l:msg = l:prefix.trim(substitute(a:message, '\n', ' ', 'g'))
+    let l:suffix = get(g:, 'ale_virtualtext_suffix', '')
+    let l:msg = l:prefix.trim(substitute(a:message, '\n', ' ', 'g')).l:suffix
 
     if has('nvim')
         call nvim_buf_set_virtual_text(a:buf, s:ns_id, a:line-1, [[l:msg, a:hl_group]], {})
