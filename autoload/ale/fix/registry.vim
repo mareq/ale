@@ -146,6 +146,11 @@ let s:default_registry = {
 \       'suggested_filetypes': [],
 \       'description': 'Remove all blank lines at the end of a file.',
 \   },
+\   'two_trailing_lines': {
+\       'function': 'ale#fixers#generic#TwoTrailingBlankLines',
+\       'suggested_filetypes': [],
+\       'description': 'Enforce two blank lines at the end of a file.',
+\   },
 \   'trim_whitespace': {
 \       'function': 'ale#fixers#generic#TrimWhitespace',
 \       'suggested_filetypes': [],
