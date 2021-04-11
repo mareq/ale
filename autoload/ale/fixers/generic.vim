@@ -11,6 +11,19 @@ function! ale#fixers#generic#RemoveTrailingBlankLines(buffer, lines) abort
     return a:lines[:l:end_index]
 endfunction
 
+function! ale#fixers#generic#TwoTrailingBlankLines(buffer, lines) abort
+    let l:end_index = len(a:lines) - 1
+
+    while l:end_index > 0 && empty(a:lines[l:end_index])
+        let l:end_index -= 1
+    endwhile
+
+    let l:result = a:lines[:l:end_index]
+    call add(l:result, "")
+    call add(l:result, "")
+    return l:result
+endfunction
+
 " Remove all whitespaces at the end of lines
 function! ale#fixers#generic#TrimWhitespace(buffer, lines) abort
     let l:index = 0
